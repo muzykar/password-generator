@@ -5,19 +5,23 @@ class PasswordGeneratorConfiguration(object):
         self.chain = chain
 
         if words is None:
-            self.words = 4
-        elif words < 2 or words > 19:
+            self.words = 5
+        elif words < 2 or words > 24:
             raise ValueError("Number of words must be between 2 and 19, but was %d." % words)
         else:
             self.words = words
 
+
         if separator is None:
-            self.separator = '/'
+            if sentence:
+                self.separator = '.'
+            else:
+                self.separator = '/'
         else:
             self.separator = separator
 
         if length is None:
-            self.length = 50
+            self.length = 6*self.words
         elif 12 > length or length > 127:
             raise ValueError("Length must be between 12 and 127, but was %d." % length)
         else:

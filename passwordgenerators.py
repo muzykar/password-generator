@@ -40,7 +40,7 @@ class PasswordGenerator(object):
 
     def generate_shortcut_password(self, prefix, separator):
         password = self.randomwords.randwords_prefix(prefix)
-        return prefix, separator.join(password)
+        return separator.join(password)
 
     def generate_end_begin_password(self, n, separator):
         password = self.randomwords.randwords_endbegin(n)
