@@ -5,8 +5,11 @@ class RandomWord(object):
     def __init__(self, words):
         self.words = words
 
-    def randword(self):
-        return random.choice(self.words)
+    def randword(self, blacklist=[]):
+        rand_word = random.choice(self.words)
+        while rand_word in blacklist:
+            rand_word = rand_word.choice(self.words)
+        return rand_word
 
     def randword_prefix(self, prefix):
         while True:

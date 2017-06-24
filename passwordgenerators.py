@@ -30,7 +30,7 @@ class PasswordGenerator(object):
             else:
                 password = self.generate_simple_password(self.config.separator, self.config.words)
 
-            if 12 <= len(password) <= self.config.length:
+            if self.config.min_length <= len(password) <= self.config.length:
                 return password
         raise ValueError('Please, try again with a different password length, or change a number of words.')
 
@@ -47,5 +47,8 @@ class PasswordGenerator(object):
         return separator.join(password)
 
     def generate_pass_sentence(self, separator='.'):
-        return separator.join(
-            [self.random_adjectives.randword(), self.random_nouns.randword(), self.random_verbs.randword()])
+        first_adj = self.random_adjectives.randword()
+        second_adj = self.random_adjectives.randword(blacklist=[first_adj])
+        noun = self.random_nouns.randword()
+        verb = self.random_verbs.randword()
+        return separator.join([first_adj, second_adj, noun, verb])

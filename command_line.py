@@ -8,7 +8,7 @@ parser.add_argument('--separator', type=str, help='Type of words separator')
 parser.add_argument('--prefix', type=str, help='First letter of words. Number of words is ignore')
 parser.add_argument('--chain', action='store_true', help='Chain of words')
 parser.add_argument('--length', type=int, help='Length of password. Range of password length: 12-127')
-parser.add_argument('--sentence', action='store_true', help='Adjective + noun + verb. Number of words is ignore')
+parser.add_argument('--sentence', action='store_true', help='Adjectives + noun + verb. Number of words is ignore')
 parser.add_argument('--language', type=str, choices=['en'], default='en', help='Select language')
 args = parser.parse_args()
 

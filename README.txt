@@ -12,5 +12,5 @@ optional arguments:
   --prefix PREFIX       First letter of words. Number of words is ignore
   --chain               Chain of words
   --length LENGTH       Length of password. Range of password length: 12-127
-  --sentence            Adjective + noun + verb. Number of words is ignore
+  --sentence            Adjectives + noun + verb. Number of words is ignore
   --language {en}       Select language
